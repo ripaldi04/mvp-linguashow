@@ -35,7 +35,7 @@ export default function ProgressPage() {
 
       {/* Content */}
       <main className="flex-1 p-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {modules.map((module) => {
             let status = "";
             let statusColor = "";
@@ -106,7 +106,9 @@ export default function ProgressPage() {
                 aria-label={`${module.title}, status: ${status}, progress ${module.progress} percent`}
               >
                 <header className="flex justify-between items-center mb-4">
-                  <h2 className="text-xl font-semibold text-gray-900 truncate">{module.title}</h2>
+                  <h2 className="text-xl font-semibold text-gray-900 truncate">
+                    {module.title}
+                  </h2>
                   <span
                     className={`inline-flex items-center space-x-2 text-sm font-semibold px-3 py-1 rounded-full ${statusColor}`}
                   >
