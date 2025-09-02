@@ -24,7 +24,7 @@ export default function Home() {
           Progress Saya
         </a>
         <a
-          href="/pengaturan"
+          href="/setting"
           className="w-full sm:w-80 px-6 py-4 text-center bg-[#1E90FF] rounded-lg text-white font-medium shadow-md hover:shadow-lg transition transform hover:scale-105"
         >
           Pengaturan
