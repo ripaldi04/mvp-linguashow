@@ -19,15 +19,15 @@ export default function ProgressPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans">
       {/* Header */}
-      <header className="bg-[#1E90FF] py-5 shadow-md flex items-center px-6">
+      <header className="bg-[#1E90FF] py-4 text-center shadow-lg flex items-center px-4">
         <Link
           href="/"
-          className="text-white text-3xl font-bold hover:text-blue-300 transition"
+          className="text-lg text-white hover:text-gray-200 transition"
           aria-label="Back to home"
         >
           ←
         </Link>
-        <h1 className="flex-1 text-center text-2xl md:text-3xl font-extrabold text-white tracking-wide">
+        <h1 className="flex-1 text-center text-lg md:text-xl font-bold text-white">
           Progress Latihan
         </h1>
         <div className="w-10" />

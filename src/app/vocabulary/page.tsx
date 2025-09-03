@@ -25,7 +25,7 @@ export default function Vocabulary() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F5F5] font-sans">
       {/* Header */}
-      <header className="bg-[#1E90FF] py-4 shadow-md flex items-center px-4">
+      <header className="bg-[#1E90FF] py-4 text-center shadow-lg flex items-center px-4">
         <Link
           href="/conversation"
           className="text-lg text-white hover:text-gray-200 transition"
@@ -39,27 +39,100 @@ export default function Vocabulary() {
       </header>
 
       {/* Content */}
-      <main className="flex-1 flex flex-col items-center justify-center p-6 space-y-6">
-        <div className="w-full max-w-sm bg-white rounded-lg shadow-lg p-4 text-gray-800 space-y-2">
-          <p>
-            <span className="font-bold">Kata:</span> “Assalamu’alaikum”
-          </p>
-          <p>
-            <span className="font-bold">Arti:</span> “Semoga keselamatan”
-          </p>
-          <p>
-            <span className="font-bold">Sinonim:</span> -
-          </p>
-          <p>
-            <span className="font-bold">Antonim:</span> -
-          </p>
+      <main className="flex-1 flex flex-col items-center p-6 space-y-8">
+        <h2 className="text-xl font-bold text-gray-800">Kosakata dari Percakapan "Di Kelas"</h2>
+        
+        <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Kartu Kosakata 1 */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-gray-800 space-y-3 border-l-4 border-[#1E90FF] hover:transform hover:scale-105 transition duration-300">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-[#1E90FF]">Assalamu'alaikum</h3>
+            </div>
+            <p className="text-gray-700 font-medium">Semoga keselamatan dan rahmat Allah beserta Anda</p>
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Contoh:</span> Assalamu'alaikum, selamat pagi Bu Guru.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <button className="text-[#1E90FF] hover:text-[#1a7fdf] text-sm font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 012.728-2.728" />
+                </svg>
+                Dengarkan
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu Kosakata 2 */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-gray-800 space-y-3 border-l-4 border-[#1E90FF] hover:transform hover:scale-105 transition duration-300">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-[#1E90FF]">Wa'alaikumsalam</h3>
+            </div>
+            <p className="text-gray-700 font-medium">Dan semoga keselamatan dan rahmat Allah juga beserta Anda</p>
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Contoh:</span> Wa'alaikumsalam, selamat pagi juga Budi.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <button className="text-[#1E90FF] hover:text-[#1a7fdf] text-sm font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 012.728-2.728" />
+                </svg>
+                Dengarkan
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu Kosakata 3 */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-gray-800 space-y-3 border-l-4 border-[#1E90FF] hover:transform hover:scale-105 transition duration-300">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-[#1E90FF]">Guru</h3>
+            </div>
+            <p className="text-gray-700 font-medium">Orang yang pekerjaannya mengajar</p>
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Contoh:</span> Bu Siti adalah guru bahasa Indonesia.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <button className="text-[#1E90FF] hover:text-[#1a7fdf] text-sm font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 012.728-2.728" />
+                </svg>
+                Dengarkan
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu Kosakata 4 */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-gray-800 space-y-3 border-l-4 border-[#1E90FF] hover:transform hover:scale-105 transition duration-300">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-[#1E90FF]">Murid</h3>
+            </div>
+            <p className="text-gray-700 font-medium">Orang yang sedang belajar atau bersekolah</p>
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Contoh:</span> Budi adalah murid kelas 5 SD.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <button className="text-[#1E90FF] hover:text-[#1a7fdf] text-sm font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 012.728-2.728" />
+                </svg>
+                Dengarkan
+              </button>
+            </div>
+          </div>
         </div>
 
         <button
           onClick={handleSubmit}
-          className="mt-6 w-full max-w-sm py-3 bg-[#1E90FF] text-white rounded-lg shadow hover:bg-blue-600 transition transform hover:scale-105"
+          className="mt-8 w-full max-w-md py-4 bg-[#1E90FF] text-white rounded-xl shadow-lg hover:bg-[#1a7fdf] transition transform hover:scale-105 text-lg font-medium"
         >
-          Lanjutkan
+          Lanjutkan ke Latihan
         </button>
       </main>
       <Footer />
@@ -100,7 +173,7 @@ export default function Vocabulary() {
             <div className="flex gap-5 w-full">
               <button
                 onClick={handleConfirmYes}
-                className="flex-1 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="flex-1 py-3 bg-[#1E90FF] text-white rounded-xl shadow-lg hover:bg-[#1a7fdf] transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#9ecfff]"
               >
                 Ya
               </button>

@@ -76,14 +76,14 @@ export default function Practice() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans">
       {/* Header */}
-      <header className="bg-blue-600 py-4 shadow-md flex items-center px-4">
+      <header className="bg-[#1E90FF] py-4 text-center shadow-lg flex items-center px-4">
         <Link
-          href="/conversation"
-          className="text-white text-2xl font-bold hover:text-blue-200"
+          href="/vocabulary"
+          className="text-lg text-white hover:text-gray-200 transition"
         >
           ←
         </Link>
-        <h1 className="flex-1 text-center text-xl md:text-2xl font-semibold">
+        <h1 className="flex-1 text-center text-lg md:text-xl font-bold text-white">
           Latihan
         </h1>
         <div className="w-8" />
@@ -101,7 +101,7 @@ export default function Practice() {
           <div className="flex items-center space-x-3">
             <span className="w-6 text-gray-600 font-medium">A</span>
             <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
-              <div className="h-3 bg-blue-500 rounded-full w-1/3 transition-all duration-300"></div>
+              <div className="h-3 bg-[#1E90FF] rounded-full w-1/3 transition-all duration-300"></div>
             </div>
           </div>
 
@@ -146,7 +146,7 @@ export default function Practice() {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="w-full max-w-md py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          className="w-full max-w-md py-3 bg-[#1E90FF] text-white rounded-xl shadow-lg hover:bg-[#1a7fdf] transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#9ecfff]"
         >
           Submit Hafalan
         </button>
@@ -171,7 +171,7 @@ export default function Practice() {
             <div className="flex gap-5 w-full">
               <button
                 onClick={handleConfirmYes}
-                className="flex-1 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="flex-1 py-3 bg-[#1E90FF] text-white rounded-xl shadow-lg hover:bg-[#1a7fdf] transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#9ecfff]"
               >
                 Ya
               </button>

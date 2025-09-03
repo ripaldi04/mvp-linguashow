@@ -21,7 +21,7 @@ export default function Result() {
   return (
     <div className="min-h-screen bg-[#F5F5F5] flex flex-col">
       {/* Header */}
-      <header className="bg-[#1E90FF] py-4 shadow-md flex items-center justify-between px-4">
+      <header className="bg-[#1E90FF] py-4 text-center shadow-lg flex items-center justify-between px-4">
         {/* Back button kiri */}
         <Link
           href="/"
