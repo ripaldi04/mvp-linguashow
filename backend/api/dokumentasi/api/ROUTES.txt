@@ -1,0 +1,65 @@
+﻿Dokumentasi Route API (TXT)
+
+Konsep: Setiap route dipetakan ke fitur aplikasi.
+
+[Auth] Fitur: autentikasi & sesi
+- POST /auth/register -> daftar akun baru (onboarding)
+- POST /auth/login -> login, balikan JWT (dipakai di route terproteksi)
+Header: Authorization: Bearer <JWT>
+
+[Health] Fitur: observabilitas
+- GET /health -> cek kesehatan API
+
+[Lessons] Fitur: materi & konten
+- GET /lessons/:id -> ambil lesson + contents (halaman materi)
+- GET /lessons/:id/conversation -> ambil percakapan (latihan speaking)
+
+[Conversations] Fitur: media pendukung
+- GET /conversations/:id/videos -> daftar video pendukung percakapan
+
+[Progress] Fitur: latihan & setoran
+- POST /progress/:lessonId/understanding -> simpan status paham/belum
+- POST /progress/:lessonId/practice/:lineId (form-data: audio) -> latihan non-realtime per baris; diteruskan ke AI /analyze; simpan ke practice_attempts & practice_words
+- POST /progress/:lessonId/submission (form-data: audio) -> setoran penuh; hitung skor; unlock lesson berikutnya jika >= 80%
+- WS /progress/:lessonId/practice-stream?target_text=... -> latihan realtime; proxy ke AI /analyze-stream; kirim partial_transcript + analisis parsial ke UI
+
+[User] Fitur: area pengguna
+- GET /user/me -> profil user aktif (id, email, name, role)
+- GET /user/progress -> daftar progres lesson (dashboard)
+- GET /user/progress/submissions -> riwayat setoran
+- GET /user/practice/:attemptId -> detail latihan + word-by-word
+
+[Admin] Fitur: CMS (butuh role=admin di JWT)
+- GET /admin/lessons -> daftar lesson + contents
+- POST /admin/lessons -> buat lesson (opsional batch contents)
+- PUT /admin/lessons/:id -> ubah metadata lesson
+- DELETE /admin/lessons/:id -> hapus lesson
+- GET /admin/conversations -> daftar percakapan + lines
+- POST /admin/conversations -> buat percakapan (lines dengan speaker, text, audioUrl + videos)
+- PUT /admin/conversations/:id -> ubah metadata percakapan
+- DELETE /admin/conversations/:id -> hapus percakapan
+
+[AI Service] Komunikasi antar layanan
+- HTTP POST AI_SERVICE_URL/analyze -> { audio_url, target_text } -> transkrip final, skor, words
+- WS AI_SERVICE_WS_URL (/analyze-stream) -> kirim chunk audio -> partial_transcript, analisis parsial, skor live
+Dipakai via proxy: WS /progress/:lessonId/practice-stream
+
+[Alur utama]
+- Belajar materi: /lessons/:id, /lessons/:id/conversation, /conversations/:id/videos
+- Latihan non-realtime: POST /progress/:lessonId/practice/:lineId lalu tampilkan word-by-word
+- Latihan realtime: WS /progress/:lessonId/practice-stream untuk pengetikan live & highlight
+- Setoran penuh: POST /progress/:lessonId/submission; unlock lesson berikutnya jika skor >= 80%
+
+[Keamanan]
+- Semua kecuali auth & health butuh JWT
+- Route admin butuh role=admin
+
+[Environment - API]
+- PORT, JWT_SECRET
+- DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS
+- AI_SERVICE_URL, AI_SERVICE_WS_URL
+
+[Tabel penyimpanan]
+- practice_attempts, practice_words
+- submissions
+- user_progress, understanding_feedback

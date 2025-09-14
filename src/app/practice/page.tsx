@@ -28,8 +28,8 @@ export default function Practice() {
     const rec = new SpeechRecognitionClass();
     rec.continuous = true;
     rec.interimResults = true;
-    // rec.lang = "ar-SA"; // bahasa Arab
-    rec.lang = "en-US"; // bahasa Arab
+    rec.lang = "ar-SA"; // bahasa Arab
+    // rec.lang = "en-US"; // bahasa inggris
 
     rec.onresult = (event: any) => {
       let finalTranscript = "";
